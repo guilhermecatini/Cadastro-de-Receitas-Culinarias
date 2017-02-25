@@ -1,0 +1,27 @@
+<div>
+  <h1>Lista de Receitas</h1>
+  <p><a href="#!/receita/gravar">Cadastrar Nova Receita</a></p>
+  <hr>
+</div>
+<div data-ng-init="vm.ListarReceitas()">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Data de Cadastro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="ax in vm.receitas">
+        <td>
+          <a href="#!/receita/{{ax._id}}">{{ax.nome}}</a>
+        </td>
+        <td>{{ax.data_cadastro | date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <a href="javascript:void(0)" data-ng-click="vm.Remover(ax._id)">Remover Receita</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

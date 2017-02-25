@@ -1,0 +1,14 @@
+<div data-ng-init="vm.ListarReceita()">
+  <h1>{{vm.receita.nome}}</h1>
+  <p>Data de Cadastro {{vm.receita.data_cadastro | date: 'dd/MM/yyyy'}} - <a href="#!/receita/gravar/{{vm.receita._id}}">Alterar Receita</a></p>
+  <p>{{vm.teste}}</p>
+  <hr>
+  <h2>Ingredientes</h2>
+  <ul data-ng-repeat="ax in vm.receita.ingredientes">
+    <li>{{ax.quantidade}} - {{ax.nome}}</li>
+  </ul>
+
+  <div class="jumbotron">
+    <span>{{vm.receita.modo_de_preparo}}</span>
+  </div>
+</div>

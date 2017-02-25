@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="AppReceitas">
+  <head>
+    <title>Receitas</title>
+    <link rel="icon" type="image/png" href="./images/icon.png">
+    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/angular-toastr/dist/angular-toastr.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div data-ng-view></div>
+      </div>
+    </div>
+
+    <script src="./vendor/angular/angular.min.js"></script>
+    <script src="./vendor/angular-route/angular-route.min.js"></script>
+    <script src="./vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./vendor/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="./js/controllers/ReceitasController.js"></script>
+
+  </body>
+</html>
