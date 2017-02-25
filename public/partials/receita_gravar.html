@@ -10,51 +10,56 @@
     <input type="text" name="nome" id="nome" data-ng-model="vm.receita.nome" class="form-control">
   </div>
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h3>Ingredientes</h3>
-    <hr>
-  </div>
+  
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-repeat="ax in vm.receita.ingredientes">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-      <label for="ingredientes.nome">Nome do Ingrediente</label>
-      <input type="text" name="ingredientes.nome" id="ingredientes.nome" data-ng-model="ax.nome" class="form-control">
-    </div>
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-      <label for="ingredientes.quantidade">Quantidade</label>
-      <input type="text" name="ingredientes.quantidade" id="ingredientes.quantidade" data-ng-model="ax.quantidade" class="form-control">
-    </div>
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-      <label for="">&nbsp;</label>
-      <button class='btn btn-warning' data-ng-click="vm.RemoverIngrediente(ax)">Remover Ingrediente</button>
-    </div>
-  </div>
+  <div data-ng-show="vm.receita._id">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3>Ingredientes</h3>
+      <hr>
+      </div>
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-      <label>Nome do Ingrediente</label>
-      <input type="text" data-ng-model="vm.ingrediente.nome" class="form-control">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-repeat="ax in vm.receita.ingredientes">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <label for="ingredientes.nome">Nome do Ingrediente</label>
+        <input type="text" name="ingredientes.nome" id="ingredientes.nome" data-ng-model="ax.nome" class="form-control">
+      </div>
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <label for="ingredientes.quantidade">Quantidade</label>
+        <input type="text" name="ingredientes.quantidade" id="ingredientes.quantidade" data-ng-model="ax.quantidade" class="form-control">
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <label for="">&nbsp;</label>
+        <button class='btn btn-warning' data-ng-click="vm.RemoverIngrediente(ax)">Remover Ingrediente</button>
+      </div>
     </div>
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-      <label>Quantidade</label>
-      <input type="text" data-ng-model="vm.ingrediente.quantidade" class="form-control">
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <label>Nome do Ingrediente</label>
+        <input type="text" data-ng-model="vm.ingrediente.nome" class="form-control">
+      </div>
+      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <label>Quantidade</label>
+        <input type="text" data-ng-model="vm.ingrediente.quantidade" class="form-control">
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <label for="">&nbsp;</label>
+        <button class='btn btn-success' data-ng-click="vm.AdicionarIngrediente()" data-ng-disabled="!vm.ingrediente.nome.length > 0 && !vm.ingrediente.quantidade.length">Adicionar Ingrediente</button>
+      </div>
     </div>
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-      <label for="">&nbsp;</label>{{vm.ingrediente.nome.length}}
-      <button class='btn btn-success' data-ng-click="vm.AdicionarIngrediente()" data-ng-disabled="!vm.ingrediente.nome.length > 0 && !vm.ingrediente.quantidade.length">Adicionar Ingrediente</button>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3>Modo de Preparo</h3>
+      <hr>
     </div>
-  </div>
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h3>Modo de Preparo</h3>
-    <hr>
-  </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <label for="modo_de_preparo">Modo de Preparo</label>
+      <textarea name="modo_de_preparo" id="modo_de_preparo" cols="30" rows="10" data-ng-model="vm.receita.modo_de_preparo" class="form-control">
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <label for="modo_de_preparo">Modo de Preparo</label>
-    <textarea name="modo_de_preparo" id="modo_de_preparo" cols="30" rows="10" data-ng-model="vm.receita.modo_de_preparo" class="form-control">
-
-    </textarea>
+      </textarea>
+    </div>
   </div>
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

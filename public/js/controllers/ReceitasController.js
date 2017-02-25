@@ -36,7 +36,7 @@ function ReceitasController($http, $routeParams, toastr, $location) {
       .then(function(ret){
         if(ret.status == 200) {
           toastr.success('Gravado!')
-          $location.path('/receitas')
+          $location.path('/receita/gravar/'+ret.data._id)
         }
       })
     }

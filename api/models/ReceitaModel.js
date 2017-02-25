@@ -25,7 +25,7 @@ const _schema = {
 
   modo_de_preparo: {
     type: String,
-    required: true
+    required: false
   },
 
   data_cadastro: {
