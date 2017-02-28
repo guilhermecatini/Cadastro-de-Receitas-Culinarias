@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const unidadeModel = require('./UnidadeModel')
 
 const _schema = {
 
@@ -10,8 +11,7 @@ const _schema = {
     required: true
   },
 
-  ingredientes: [
-  {
+  ingredientes: [{
     nome: {
       type: String,
       required: true
@@ -19,9 +19,12 @@ const _schema = {
     quantidade: {
       type: Number,
       required: true
+    },
+    unidade: {
+      type: Schema.Types.ObjectId,
+      ref: unidadeModel
     }
-  },
-  ],
+  }, ],
 
   modo_de_preparo: {
     type: String,
@@ -38,7 +41,7 @@ const _schema = {
     type: Date,
     required: true,
     default: Date.now
-  }
+  },
 
 }
 

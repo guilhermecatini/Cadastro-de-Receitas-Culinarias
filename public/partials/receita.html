@@ -6,7 +6,7 @@
     <hr>
     <h2>Ingredientes</h2>
     <ul data-ng-repeat="ax in vm.receita.ingredientes">
-      <li>{{ax.quantidade}} - {{ax.nome}}</li>
+      <li>{{ax.quantidade}} {{ax.unidade.descricao}} de {{ax.nome}}</li>
     </ul>
     <hr>
     <h2>Modo de Preparo</h2>
