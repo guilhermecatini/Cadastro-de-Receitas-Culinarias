@@ -11,6 +11,7 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/receitas')
 
 const ReceitasAPI = require('./api/routes/ReceitasRoutes')
+const UnidadesAPI = require('./api/routes/UnidadesRoutes')
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/receitas/', ReceitasAPI)
+app.use('/api/unidades/', UnidadesAPI)
 
 
 // catch 404 and forward to error handler

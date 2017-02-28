@@ -35,13 +35,17 @@
 
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <label>Nome do Ingrediente</label>
         <input type="text" data-ng-model="vm.ingrediente.nome" class="form-control">
       </div>
-      <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <label>Quantidade</label>
         <input type="text" data-ng-model="vm.ingrediente.quantidade" class="form-control">
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" data-ng-init="vm.ListarUnidades()">
+        <label>Un Medida</label>
+        <select data-ng-model="vm.unidade" data-ng-options="un._id as un.descricao for un in vm.unidades" class="form-control"></select>
       </div>
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <label for="">&nbsp;</label>

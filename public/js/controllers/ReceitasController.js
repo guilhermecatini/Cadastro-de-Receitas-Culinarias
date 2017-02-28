@@ -9,10 +9,26 @@ function ReceitasController($http, $routeParams, toastr, $location) {
 
   vm.params = $routeParams
 
+
   vm.receita = {}
   vm.receitas = {}
-
   vm.ingrediente = {}
+  vm.unidades = {}
+
+
+
+  vm.ListarUnidades = ListarUnidades
+  function ListarUnidades() {
+    $http({
+      method: 'GET',
+      url: '/api/unidades/retrieve'
+    })
+    .then(function(ret){
+      if(ret.status == 200) {
+        vm.unidades = ret.data
+      }
+    })
+  }
 
   vm.Gravar = Gravar
   function Gravar() {

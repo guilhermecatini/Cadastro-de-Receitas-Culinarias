@@ -1,6 +1,13 @@
 'use strict'
 
-angular.module('AppReceitas', ['ngRoute', 'toastr'])
+angular.module('AppReceitas', ['ngRoute', 'toastr', 'angularUtils.directives.dirPagination'])
+
+.filter('newlines', function(){
+  return function(text) {
+    //text += ''
+    //return text.replace(new RegExp('\n', 'g'), '<br>')
+  }
+})
 
 .config(function ($routeProvider) {
   $routeProvider
