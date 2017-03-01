@@ -11,7 +11,7 @@ function LoginController(toastr, $location) {
 
   vm.Login = Login
   function Login() {
-    if (vm.user.login == 'fatima' && vm.user.password == 'frizzi05') {
+    if (vm.user.login == 'admin' && vm.user.password == 'admin') {
       localStorage.setItem('login', true)
       toastr.success('Logado! Redirecionando...')
       $location.path('/receita')
